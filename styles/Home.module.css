@@ -49,9 +49,15 @@
   color: #242424;
 }
 
+.socialmedia li:nth-child(1) {
+  padding: 0 0.6rem;
+}
+
 .socialmedia li:nth-child(2) {
   font-size: 40px;
   margin-bottom: 2px;
+}
 
-  color: #242424;
+.socialmedia li:nth-child(3) {
+  padding-top: 2px;
 }
