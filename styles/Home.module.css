@@ -70,7 +70,7 @@
   justify-self: flex-end;
   display: inline-block;
   position: relative;
-  width: 80px;
+  width: 55px;
   height: 75px;
 }
 .loading div {
@@ -125,5 +125,70 @@
   }
   100% {
     transform: translate(18px, 0);
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .loading {
+    width: 50px;
+    height: 75px;
+  }
+  .loading div {
+    position: absolute;
+    top: 58px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #242424;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  
+  .loading div:nth-child(1) {
+    left: 5px;
+    animation: loading1 0.8s infinite;
+  }
+  
+  .loading div:nth-child(2) {
+    left: 5px;
+    animation: loading2 0.8s infinite;
+  }
+  
+  .loading div:nth-child(3) {
+    left: 20px;
+    animation: loading2 0.8s infinite;
+  }
+  
+  .loading div:nth-child(4) {
+    left: 35px;
+    animation: loading3 0.8s infinite;
+  }
+  
+  @keyframes loading1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes loading3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes loading2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(15px, 0);
+    }
   }
 }
