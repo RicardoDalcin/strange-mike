@@ -32,7 +32,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>em breve...</h1>
+        <h1 className={styles.title}>
+          em breve
+          <div className={styles.loading}>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </h1>
 
         <ul className={styles.socialmedia}>
           <li>
