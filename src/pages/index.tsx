@@ -148,12 +148,12 @@ export default function Home() {
 
         <article className="mt-8 flex flex-col gap-8">
           <div className="align-center flex justify-center">
-            <div className="flex flex-col justify-center gap-6 rounded-[32px] bg-black/30 py-6">
+            <div className="flex w-full flex-col justify-center gap-6 rounded-[32px] bg-black/30 py-6">
               <p className="text-center text-3xl font-semibold text-orange-500">
                 Quem sou eu?
               </p>
 
-              <div className="flex flex-col gap-4 px-6 font-text text-sm text-white">
+              <div className="mx-auto flex max-w-[330px] flex-col gap-4  font-text text-sm text-white">
                 <p>
                   Olá, muito prazer! Me chamo Miguel, e nos últimos anos venho
                   trabalhando no meu projeto de música eletrônica “Strange
@@ -175,7 +175,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 px-8">
+          <div className="mx-auto flex w-full max-w-[330px] flex-col gap-4">
             <Social
               icon={FaSpotify}
               title="Perfil no Spotify"
@@ -199,7 +199,7 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="my-8 flex flex-col justify-center gap-8 px-8">
+        <article className="my-8 mx-auto flex w-full max-w-[330px] flex-col justify-center gap-8">
           <div className="flex flex-col justify-end gap-3">
             <div className="flex flex-col gap-2">
               <p className="text-2xl font-medium text-white">
