@@ -11,7 +11,7 @@ const inter = Inter({
 
 const sourceSansPro = Source_Sans_Pro({
   variable: '--font-source-sans-pro',
-  weight: ['400'],
+  weight: ['400', '600'],
 });
 
 export default function App({ Component, pageProps }: AppProps) {

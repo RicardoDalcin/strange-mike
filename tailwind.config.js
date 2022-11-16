@@ -10,19 +10,19 @@ module.exports = {
         text: ['var(--font-source-sans-pro)', ...fontFamily.sans],
       },
       colors: {
+        gray: {
+          50: '#EBEBEB',
+          100: '#CACACA',
+          200: '#BFBFBF',
+          900: '#131313',
+        },
+        orange: {
+          400: '#EB734D',
+          500: '#EE723C',
+        },
         slate: {
-          700: '#323D67',
-        },
-        neutral: {
-          100: '#F5F5F5',
-        },
-        cyan: {
-          200: '#7BEDE5',
-          300: '#54F1E6',
-        },
-        indigo: {
-          400: '#7775E2',
-          500: '#6A67FB',
+          800: '#1C1E27',
+          900: '#191B24',
         },
       },
     },
