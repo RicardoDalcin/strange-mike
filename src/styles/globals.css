@@ -29,3 +29,13 @@ vm-player {
   border-radius: 50%;
   z-index: -1;
 }
+
+.header {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}

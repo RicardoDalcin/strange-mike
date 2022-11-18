@@ -39,6 +39,10 @@ const WidgetBot = dynamic(() => import('@widgetbot/react-embed'), {
   ssr: false,
 });
 
+const Header = dynamic(() => import('../components/Header'), {
+  ssr: false,
+});
+
 const MOBILE_CONTAINER_WIDTH = '330px';
 const TABLET_CONTAINER_WIDTH = '500px';
 
@@ -55,18 +59,45 @@ export default function Home() {
       </Head>
 
       <div className="min-h-screen">
-        <header className="flex h-20 items-center justify-center py-6">
-          <p className="flexfont-text text-2xl font-semibold uppercase text-white">
-            Strange Mike
-          </p>
-        </header>
+        <Header />
+        {/* <header
+          className={classNames(
+            'flex h-20 items-center justify-center',
+            '2xl:fixed 2xl:w-[100%] ',
+            { 'bg-black': window && window.scrollY > 50 },
+          )}
+        >
+          <div
+            className={classNames(
+              'flex h-full items-center justify-center',
+              '2xl:fixed 2xl:mx-auto 2xl:w-[90%] 2xl:max-w-[1650px]',
+            )}
+          >
+            <p className="font-text text-2xl font-semibold uppercase text-white">
+              Strange Mike
+            </p>
+
+            <nav
+              className={classNames(
+                'ml-[-150px] hidden flex-1 justify-center gap-8 text-xl font-semibold uppercase',
+                '2xl:flex',
+              )}
+            >
+              <a href="#">Início</a>
+
+              <a href="#about">Sobre</a>
+
+              <a href="#contact">Contato</a>
+            </nav>
+          </div>
+        </header> */}
 
         <article
           className={classNames(
             'mx-auto flex flex-col gap-6',
             `max-w-[330px]`,
             `md:max-w-[500px]`,
-            `2xl:min-h-[calc(100vh_-_80px)] 2xl:w-[90%] 2xl:max-w-[1650px] 2xl:items-center`,
+            `2xl:min-h-[calc(100vh)] 2xl:w-[90%] 2xl:max-w-[1650px] 2xl:items-center 2xl:pt-[80px]`,
           )}
         >
           <div
@@ -177,6 +208,7 @@ export default function Home() {
         </article>
 
         <article
+          id="about"
           className={classNames(
             'mt-8 flex flex-col gap-8',
             '2xl:mx-auto 2xl:w-[93%] 2xl:flex-row',
@@ -305,6 +337,7 @@ export default function Home() {
         </article>
 
         <article
+          id="contact"
           className={classNames(
             'my-8 mx-auto flex w-full flex-col justify-center gap-8',
             `max-w-[330px]`,
