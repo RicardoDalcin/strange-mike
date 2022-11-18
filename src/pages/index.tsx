@@ -37,12 +37,15 @@ const Youtube = vimeDynamic('Youtube');
 const DefaultUi = vimeDynamic('DefaultUi');
 
 interface BadgeProps {
+  className?: string;
   icon: typeof IconBase;
   title: string;
 }
 
-const Badge = ({ icon: Icon, title }: BadgeProps) => (
-  <div className="rounded- flex flex-col justify-center gap-2 bg-slate-800 p-3 text-gray-100">
+const Badge = ({ className = '', icon: Icon, title }: BadgeProps) => (
+  <div
+    className={`flex flex-col justify-center gap-2 rounded bg-slate-800 p-3 text-gray-100 ${className}`}
+  >
     <div className="align-center flex justify-center">
       <Icon size={18} />
     </div>
@@ -77,6 +80,9 @@ const Social = ({ icon: Icon, title, color, href }: SocialProps) => (
   </a>
 );
 
+const MOBILE_CONTAINER_WIDTH = '330px';
+const TABLET_CONTAINER_WIDTH = '500px';
+
 export default function Home() {
   return (
     <>
@@ -96,7 +102,7 @@ export default function Home() {
           </p>
         </header>
 
-        <article className="mx-auto flex max-w-[330px] flex-col gap-6">
+        <article className="mx-auto flex max-w-[330px] flex-col gap-6 md:max-w-[500px]">
           <div className="jusitfy-center align-center flex flex-col gap-8">
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-1">
@@ -105,9 +111,7 @@ export default function Home() {
                 </p>
 
                 <h1 className="text-3xl font-extrabold">
-                  Leve suas produções
-                  <br />
-                  para o{' '}
+                  Leve suas produções para o{' '}
                   <strong className="font-extrabold text-orange-400">
                     próximo nível.
                   </strong>
@@ -120,10 +124,14 @@ export default function Home() {
                 início ao fim.
               </p>
 
-              <div className="align-center flex justify-between">
-                <Badge icon={FaVideo} title="10 aulas" />
-                <Badge icon={FaClock} title="+4 horas" />
-                <Badge icon={FaDownload} title="Projeto e samples" />
+              <div className="align-center flex justify-between md:gap-6">
+                <Badge className="md:w-full" icon={FaVideo} title="10 aulas" />
+                <Badge className="md:w-full" icon={FaClock} title="+4 horas" />
+                <Badge
+                  className="md:w-full"
+                  icon={FaDownload}
+                  title="Projeto e samples"
+                />
               </div>
             </div>
 
@@ -153,7 +161,7 @@ export default function Home() {
                 Quem sou eu?
               </p>
 
-              <div className="mx-auto flex max-w-[330px] flex-col gap-4  font-text text-sm text-white">
+              <div className="mx-auto flex max-w-[330px] flex-col gap-4 font-text  text-sm text-white md:max-w-[500px]">
                 <p>
                   Olá, muito prazer! Me chamo Miguel, e nos últimos anos venho
                   trabalhando no meu projeto de música eletrônica “Strange
@@ -175,7 +183,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto flex w-full max-w-[330px] flex-col gap-4">
+          <div className="mx-auto flex w-full max-w-[330px] flex-col gap-4 md:max-w-[500px]">
             <Social
               icon={FaSpotify}
               title="Perfil no Spotify"
@@ -199,7 +207,7 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="my-8 mx-auto flex w-full max-w-[330px] flex-col justify-center gap-8">
+        <article className="my-8 mx-auto flex w-full max-w-[330px] flex-col justify-center gap-8 md:max-w-[500px]">
           <div className="flex flex-col justify-end gap-3">
             <div className="flex flex-col gap-2">
               <p className="text-2xl font-medium text-white">
