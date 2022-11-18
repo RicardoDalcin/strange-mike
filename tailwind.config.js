@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
-        text: ['var(--font-source-sans-pro)', ...fontFamily.sans],
+        sans: ['Inter', ...fontFamily.sans],
+        text: ['Source Sans Pro', ...fontFamily.sans],
       },
       colors: {
         gray: {

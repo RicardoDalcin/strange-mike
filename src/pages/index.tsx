@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-import { IconBase } from 'react-icons';
 import {
   FaVideo,
   FaClock,
@@ -10,75 +9,29 @@ import {
   FaSpotify,
   FaYoutube,
   FaTiktok,
+  FaArrowDown,
 } from 'react-icons/fa';
 
-import scrollIndicator from '../../public/assets/scroll-indicator.svg';
+import classNames from 'classnames';
+
+import { PlayerProps } from '@vime/react/dist/types/components/Player';
+import { YoutubeProps } from '@vime/react/dist/types/components/Youtube';
+import { DefaultUiProps } from '@vime/react/dist/types/components/DefaultUi';
+
+import { Badge } from '../components/Badge';
+import { Social } from '../components/Social';
+
+import { vimeImport } from '../utils/vimeImport';
 
 import '@vime/core/themes/default.css';
+
+const Player = vimeImport<PlayerProps>('Player');
+const Youtube = vimeImport<YoutubeProps>('Youtube');
+const DefaultUi = vimeImport<DefaultUiProps>('DefaultUi');
 
 const WidgetBot = dynamic(() => import('@widgetbot/react-embed'), {
   ssr: false,
 });
-
-function vimeDynamic(module: string) {
-  return dynamic(
-    () =>
-      import('@vime/react').then((mod: any) => mod[module]) as Promise<
-        React.FC<any>
-      >,
-    {
-      ssr: false,
-    },
-  );
-}
-
-const Player = vimeDynamic('Player');
-const Youtube = vimeDynamic('Youtube');
-const DefaultUi = vimeDynamic('DefaultUi');
-
-interface BadgeProps {
-  className?: string;
-  icon: typeof IconBase;
-  title: string;
-}
-
-const Badge = ({ className = '', icon: Icon, title }: BadgeProps) => (
-  <div
-    className={`flex flex-col justify-center gap-2 rounded bg-slate-800 p-3 text-gray-100 ${className}`}
-  >
-    <div className="align-center flex justify-center">
-      <Icon size={18} />
-    </div>
-
-    <span className="text-center text-sm">{title}</span>
-  </div>
-);
-
-interface SocialProps {
-  icon: typeof IconBase;
-  title: string;
-  color: string;
-  href: string;
-}
-
-const Social = ({ icon: Icon, title, color, href }: SocialProps) => (
-  <a
-    className={`align-center flex h-[72px] justify-center gap-3  rounded-full border-[1px]`}
-    style={{ borderColor: color }}
-    href={href}
-  >
-    <div className="align-center my-auto flex justify-center">
-      <Icon size={40} color={color} />
-    </div>
-
-    <span
-      className={`my-auto font-text text-2xl font-semibold`}
-      style={{ color }}
-    >
-      {title}
-    </span>
-  </a>
-);
 
 const MOBILE_CONTAINER_WIDTH = '330px';
 const TABLET_CONTAINER_WIDTH = '500px';
@@ -96,21 +49,48 @@ export default function Home() {
       </Head>
 
       <div className="min-h-screen">
-        <header className="align-center flex justify-center py-6">
+        <header className="flex h-20 items-center justify-center py-6">
           <p className="flexfont-text text-2xl font-semibold uppercase text-white">
             Strange Mike
           </p>
         </header>
 
-        <article className="mx-auto flex max-w-[330px] flex-col gap-6 md:max-w-[500px]">
-          <div className="jusitfy-center align-center flex flex-col gap-8">
-            <div className="flex flex-col gap-5">
-              <div className="flex flex-col gap-1">
-                <p className="font-text text-sm text-gray-200">
+        <article
+          className={classNames(
+            'mx-auto flex flex-col gap-6',
+            `max-w-[330px]`,
+            `md:max-w-[500px]`,
+            `2xl:min-h-[calc(100vh_-_80px)] 2xl:w-[90%] 2xl:max-w-[1700px] 2xl:items-center`,
+          )}
+        >
+          <div
+            className={classNames(
+              'jusitfy-center flex flex-col items-center gap-8',
+              '2xl:w-full 2xl:flex-1 2xl:flex-row 2xl:justify-between 2xl:py-8',
+            )}
+          >
+            <div
+              className={classNames(
+                'flex flex-col gap-5',
+                '2xl:max-w-[700px] 2xl:gap-8 2xl:pb-6',
+              )}
+            >
+              <div className={classNames('flex flex-col gap-1', '2xl:gap-3')}>
+                <p
+                  className={classNames(
+                    'font-text text-sm text-gray-200',
+                    '2xl:text-xl',
+                  )}
+                >
                   Remake masterclass
                 </p>
 
-                <h1 className="text-3xl font-extrabold">
+                <h1
+                  className={classNames(
+                    'text-3xl font-extrabold',
+                    '2xl:text-6xl 2xl:leading-[1.15]',
+                  )}
+                >
                   Leve suas produções para o{' '}
                   <strong className="font-extrabold text-orange-400">
                     próximo nível.
@@ -118,24 +98,33 @@ export default function Home() {
                 </h1>
               </div>
 
-              <p className="font-text text-sm text-gray-50">
+              <p
+                className={classNames(
+                  'font-text text-sm text-gray-50',
+                  '2xl:text-[22px] 2xl:leading-tight',
+                )}
+              >
                 Aprenda a fazer remakes das suas músicas preferidas passo a
                 passo recriando o hit “Move Your Body” do Öwnboss e Sevek do
                 início ao fim.
               </p>
 
-              <div className="align-center flex justify-between md:gap-6">
-                <Badge className="md:w-full" icon={FaVideo} title="10 aulas" />
-                <Badge className="md:w-full" icon={FaClock} title="+4 horas" />
-                <Badge
-                  className="md:w-full"
-                  icon={FaDownload}
-                  title="Projeto e samples"
-                />
+              <div
+                className={classNames(
+                  'flex items-center justify-between',
+                  'md:gap-6',
+                  '2xl:justify-start',
+                )}
+              >
+                <Badge icon={FaVideo} title="10 aulas" />
+
+                <Badge icon={FaClock} title="+4 horas" />
+
+                <Badge icon={FaDownload} title="Projeto e samples" />
               </div>
             </div>
 
-            <div className="">
+            <div className="w-full 2xl:w-[50%]">
               <Player>
                 <Youtube videoId="Dvv3FMVjpA0" />
                 <DefaultUi />
@@ -143,25 +132,46 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="align-center flex justify-center">
-            <button className="align-center flex justify-center rounded-2xl bg-orange-500 px-6 py-4 text-base text-gray-900">
+          <div
+            className={classNames(
+              'flex items-center justify-center',
+              '2xl:mb-8',
+            )}
+          >
+            <button
+              className={classNames(
+                'flex items-center justify-center rounded-2xl bg-orange-500 px-6 py-4 text-base text-gray-900',
+                '2xl:text-2xl',
+              )}
+            >
               Aprenda agora
             </button>
           </div>
 
-          <div className="align-center flex justify-center">
-            <Image src={scrollIndicator} alt="Scroll down" />
+          <div
+            className={classNames(
+              'mx-auto flex h-8 w-8 items-center justify-center rounded-full border-2 border-slate-800 text-slate-800',
+              '2xl:mb-12',
+            )}
+          >
+            <FaArrowDown />
           </div>
         </article>
 
-        <article className="mt-8 flex flex-col gap-8">
-          <div className="align-center flex justify-center">
+        <article className={classNames('mt-8 flex flex-col gap-8')}>
+          <div className="flex items-center justify-center">
             <div className="flex w-full flex-col justify-center gap-6 rounded-[32px] bg-black/30 py-6">
               <p className="text-center text-3xl font-semibold text-orange-500">
                 Quem sou eu?
               </p>
 
-              <div className="mx-auto flex max-w-[330px] flex-col gap-4 font-text  text-sm text-white md:max-w-[500px]">
+              <div
+                className={classNames(
+                  'mx-auto flex flex-col gap-4 font-text text-sm text-white',
+                  `max-w-[330px]`,
+                  `md:max-w-[500px]`,
+                )}
+              >
                 <p>
                   Olá, muito prazer! Me chamo Miguel, e nos últimos anos venho
                   trabalhando no meu projeto de música eletrônica “Strange
@@ -183,7 +193,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto flex w-full max-w-[330px] flex-col gap-4 md:max-w-[500px]">
+          <div
+            className={classNames(
+              'mx-auto flex w-full flex-col gap-4',
+              `max-w-[330px]`,
+              `md:max-w-[500px]`,
+            )}
+          >
             <Social
               icon={FaSpotify}
               title="Perfil no Spotify"
@@ -207,7 +223,13 @@ export default function Home() {
           </div>
         </article>
 
-        <article className="my-8 mx-auto flex w-full max-w-[330px] flex-col justify-center gap-8 md:max-w-[500px]">
+        <article
+          className={classNames(
+            'my-8 mx-auto flex w-full flex-col justify-center gap-8',
+            `max-w-[330px]`,
+            `md:max-w-[500px]`,
+          )}
+        >
           <div className="flex flex-col justify-end gap-3">
             <div className="flex flex-col gap-2">
               <p className="text-2xl font-medium text-white">
