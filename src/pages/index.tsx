@@ -60,71 +60,40 @@ export default function Home() {
 
       <div className="min-h-screen">
         <Header />
-        {/* <header
-          className={classNames(
-            'flex h-20 items-center justify-center',
-            '2xl:fixed 2xl:w-[100%] ',
-            { 'bg-black': window && window.scrollY > 50 },
-          )}
-        >
-          <div
-            className={classNames(
-              'flex h-full items-center justify-center',
-              '2xl:fixed 2xl:mx-auto 2xl:w-[90%] 2xl:max-w-[1650px]',
-            )}
-          >
-            <p className="font-text text-2xl font-semibold uppercase text-white">
-              Strange Mike
-            </p>
-
-            <nav
-              className={classNames(
-                'ml-[-150px] hidden flex-1 justify-center gap-8 text-xl font-semibold uppercase',
-                '2xl:flex',
-              )}
-            >
-              <a href="#">Início</a>
-
-              <a href="#about">Sobre</a>
-
-              <a href="#contact">Contato</a>
-            </nav>
-          </div>
-        </header> */}
 
         <article
           className={classNames(
             'mx-auto flex flex-col gap-6',
             `max-w-[330px]`,
             `md:max-w-[500px]`,
-            `2xl:min-h-[calc(100vh)] 2xl:w-[90%] 2xl:max-w-[1650px] 2xl:items-center 2xl:pt-[80px]`,
+            `xl:min-h-[calc(100vh)] xl:w-[90%] xl:max-w-[1650px] xl:items-center xl:pt-[80px]`,
           )}
         >
           <div
             className={classNames(
               'jusitfy-center flex flex-col items-center gap-8',
-              '2xl:w-full 2xl:flex-1 2xl:flex-row 2xl:justify-between 2xl:py-8',
+              'xl:w-full xl:flex-1 xl:flex-row xl:justify-between xl:py-8',
             )}
           >
             <div
               className={classNames(
                 'relative flex flex-col gap-5',
-                '2xl:max-w-[700px] 2xl:gap-8 2xl:pb-6',
+                'xl:max-w-[700px] xl:gap-8 xl:pb-6',
               )}
             >
               <div
                 id="assets"
                 className={classNames(
                   'absolute left-[-30px] bottom-[-15px] h-[220px] w-[220px] overflow-hidden',
-                  '2xl:left-[-50px] 2xl:bottom-[-50px] 2xl:h-[350px] 2xl:w-[350px]',
+                  'xl:left-[-50px] xl:bottom-[-50px] xl:h-[350px] xl:w-[350px]',
                 )}
               />
 
-              <div className={classNames('flex flex-col gap-1', '2xl:gap-3')}>
+              <div className={classNames('flex flex-col gap-1', 'xl:gap-3')}>
                 <p
                   className={classNames(
                     'font-text text-sm text-gray-200',
-                    '2xl:text-xl',
+                    'xl:text-xl',
                   )}
                 >
                   Remake masterclass
@@ -133,7 +102,7 @@ export default function Home() {
                 <h1
                   className={classNames(
                     'text-3xl font-extrabold',
-                    '2xl:text-6xl 2xl:leading-[1.15]',
+                    'xl:text-6xl xl:leading-[1.15]',
                   )}
                 >
                   Leve suas produções para o{' '}
@@ -146,7 +115,7 @@ export default function Home() {
               <p
                 className={classNames(
                   'font-text text-sm text-gray-50',
-                  '2xl:text-[22px] 2xl:leading-tight',
+                  'xl:text-[22px] xl:leading-tight',
                 )}
               >
                 Aprenda a fazer remakes das suas músicas preferidas passo a
@@ -158,7 +127,7 @@ export default function Home() {
                 className={classNames(
                   'flex items-center justify-between',
                   'md:gap-6',
-                  '2xl:justify-start',
+                  'xl:justify-start',
                 )}
               >
                 <Badge icon={FaVideo} title="10 aulas" />
@@ -169,7 +138,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative w-full 2xl:w-[50%]">
+            <div className="relative w-full xl:w-[50%]">
               <div className="absolute top-0 h-full w-full rotate-2 rounded-3xl bg-slate-800" />
               <Player>
                 <Youtube videoId="Dvv3FMVjpA0" />
@@ -181,13 +150,13 @@ export default function Home() {
           <div
             className={classNames(
               'flex items-center justify-center',
-              '2xl:mb-8',
+              'xl:mb-8',
             )}
           >
             <a
               className={classNames(
                 'flex items-center justify-center rounded-2xl bg-orange-500 px-6 py-4 text-base text-gray-900',
-                '2xl:text-2xl',
+                'xl:text-2xl',
               )}
               href="https://www.google.com"
               target="_blank"
@@ -200,7 +169,7 @@ export default function Home() {
           <div
             className={classNames(
               'mx-auto flex h-8 w-8 items-center justify-center rounded-full border-2 border-slate-800 text-slate-800',
-              '2xl:mb-12',
+              'xl:mb-12',
             )}
           >
             <FaArrowDown />
@@ -211,39 +180,39 @@ export default function Home() {
           id="about"
           className={classNames(
             'mt-8 flex flex-col gap-8',
-            '2xl:mx-auto 2xl:w-[93%] 2xl:flex-row',
+            'xl:mx-auto xl:w-[93%] 2xl:flex-row',
           )}
         >
           <div
             className={classNames(
               'flex items-center justify-center',
-              '2xl:w-[67%]',
+              'xl:w-full 2xl:w-[67%]',
             )}
           >
             <div className="flex w-full items-center">
               <Image
                 src={aboutImage}
                 alt="Strange Mike"
-                className="z-10 hidden 2xl:block"
+                className="z-10 hidden xl:block"
               />
 
               <div
                 className={classNames(
                   'relative flex w-full flex-col justify-center gap-6 overflow-hidden rounded-[32px] bg-black/30 py-6',
-                  '2xl:ml-[-336px] 2xl:h-[540px] 2xl:items-start  2xl:pl-[364px] 2xl:pr-12',
+                  'xl:ml-[-336px] xl:h-[540px] xl:items-start  xl:pl-[364px] xl:pr-12',
                 )}
               >
                 <CirclePattern
                   width={320}
                   height={350}
-                  className="absolute left-full z-[-1] hidden -translate-x-1/2 -translate-y-1/4 transform 2xl:block"
+                  className="absolute left-full z-[-1] hidden -translate-x-1/2 -translate-y-1/4 transform xl:block"
                   color="#191B24"
                 />
 
                 <CirclePattern
                   width={320}
                   height={350}
-                  className="absolute right-full top-full z-[-1] hidden translate-x-1/2 -translate-y-1/4 transform 2xl:block"
+                  className="absolute right-full top-full z-[-1] hidden translate-x-1/2 -translate-y-1/4 transform xl:block"
                   color="#191B24"
                 />
 
@@ -256,7 +225,7 @@ export default function Home() {
                     'mx-auto flex flex-col gap-4 font-text text-sm text-white',
                     `max-w-[330px]`,
                     `md:max-w-[500px]`,
-                    '2xl:w-full 2xl:max-w-none 2xl:text-xl',
+                    'xl:w-full xl:max-w-none xl:text-xl',
                   )}
                 >
                   <p className="leading-snug">
@@ -278,7 +247,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="hidden items-center gap-6 2xl:flex">
+                <div className="hidden items-center gap-6 xl:flex">
                   <SocialDesktop
                     icon={FaSpotify}
                     href="https://www.google.com"
@@ -342,20 +311,20 @@ export default function Home() {
             'my-8 mx-auto flex w-full flex-col justify-center gap-8',
             `max-w-[330px]`,
             `md:max-w-[500px]`,
-            '2xl:mt-[200px] 2xl:max-w-[1440px] 2xl:pb-16',
+            'xl:mt-[64px] xl:w-[90%] xl:max-w-[1440px] xl:pb-16 2xl:mt-[200px]',
           )}
         >
           <div
             className={classNames(
               'flex flex-col justify-end gap-3',
-              '2xl:flex-row 2xl:items-end 2xl:justify-between',
+              'xl:flex-row xl:items-end xl:justify-between',
             )}
           >
             <div className="flex flex-col gap-2">
               <p
                 className={classNames(
                   'text-2xl font-medium text-white',
-                  '2xl:text-4xl',
+                  'xl:text-4xl',
                 )}
               >
                 Ficou com alguma dúvida?
@@ -364,7 +333,7 @@ export default function Home() {
               <p
                 className={classNames(
                   'text-xl font-medium text-white',
-                  '2xl:text-2xl',
+                  'xl:text-2xl',
                 )}
               >
                 Faça sua pergunta no canal do Discord:
@@ -374,7 +343,7 @@ export default function Home() {
             <div
               className={classNames(
                 'hidden flex-col text-center text-2xl',
-                '2xl:flex',
+                'xl:flex',
               )}
             >
               <p className="text-white">Ou, se preferir, mande para</p>
@@ -387,11 +356,11 @@ export default function Home() {
               server="798690805464301588"
               channel="798702383919530004"
               width="100%"
-              className="h-[300px] border-b-4 border-orange-500 2xl:h-[700px]"
+              className="h-[300px] border-b-4 border-orange-500 xl:h-[700px]"
             />
           </div>
 
-          <div className="flex flex-col text-center text-base 2xl:hidden">
+          <div className="flex flex-col text-center text-base xl:hidden">
             <p className="text-white">Ou, se preferir, mande para</p>
             <p className="text-orange-500">contato@strangemike.com</p>
           </div>

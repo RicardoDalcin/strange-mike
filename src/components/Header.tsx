@@ -20,13 +20,13 @@ const Header = () => {
       ref={headerRef}
       className={classNames(
         'z-20 flex h-20 items-center justify-center transition-all',
-        '2xl:fixed 2xl:w-[100%]',
+        'xl:fixed xl:w-[100%]',
       )}
     >
       <div
         className={classNames(
           'flex h-full items-center justify-center',
-          '2xl:fixed 2xl:mx-auto 2xl:w-[90%] 2xl:max-w-[1650px]',
+          'xl:fixed xl:mx-auto xl:h-20 xl:w-[90%] xl:max-w-[1650px]',
         )}
       >
         <p className="font-text text-2xl font-semibold uppercase text-white">
@@ -36,7 +36,7 @@ const Header = () => {
         <nav
           className={classNames(
             'ml-[-150px] hidden flex-1 justify-center gap-8 text-xl font-semibold uppercase',
-            '2xl:flex',
+            'xl:flex',
           )}
         >
           <a href="#">Início</a>

@@ -11,13 +11,13 @@ export const Badge = ({ icon: Icon, title }: BadgeProps) => (
     className={classNames(
       `flex flex-col justify-center gap-2 rounded bg-slate-800 p-3 text-gray-100`,
       'md:w-full',
-      '2xl:w-auto 2xl:flex-row 2xl:justify-center 2xl:rounded-full',
+      'xl:w-auto xl:flex-row xl:justify-center xl:rounded-full',
     )}
   >
-    <div className="flex items-center justify-center text-lg 2xl:text-xl">
+    <div className="flex items-center justify-center text-lg xl:text-xl">
       <Icon />
     </div>
 
-    <span className="text-center text-sm 2xl:text-xl">{title}</span>
+    <span className="text-center text-sm xl:text-xl">{title}</span>
   </div>
 );
