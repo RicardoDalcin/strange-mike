@@ -1,8 +1,17 @@
-import classNames from 'classnames';
 import { useRef } from 'react';
+
+import classNames from 'classnames';
+
+import { animated, useSpring } from '@react-spring/web';
 
 const Header = () => {
   const headerRef = useRef<HTMLElement>(null);
+
+  const fadeIn = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 200,
+  });
 
   window.onscroll = () => {
     const header = document.querySelector('header');
@@ -16,12 +25,13 @@ const Header = () => {
   };
 
   return (
-    <header
+    <animated.header
       ref={headerRef}
       className={classNames(
         'z-20 flex h-20 items-center justify-center transition-all',
         'xl:fixed xl:w-[100%]',
       )}
+      style={fadeIn}
     >
       <div
         className={classNames(
@@ -46,7 +56,7 @@ const Header = () => {
           <a href="#contact">Contato</a>
         </nav>
       </div>
-    </header>
+    </animated.header>
   );
 };
 
