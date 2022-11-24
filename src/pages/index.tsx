@@ -48,6 +48,12 @@ const Header = dynamic(() => import('../components/Header'), {
 const MOBILE_CONTAINER_WIDTH = '330px';
 const TABLET_CONTAINER_WIDTH = '500px';
 
+const TIKTOK_LINK = 'https://www.tiktok.com/@strangemikesounds';
+const YOUTUBE_LINK = 'https://www.youtube.com/c/StrangeMike';
+const INSTAGRAM_LINK = 'https://www.instagram.com/strangemikesounds';
+const SPOTIFY_LINK = 'https://open.spotify.com/artist/5eX0epLy551uFsC45QUtnQ';
+const COURSE_LINK = 'https://sun.eduzz.com/1669653';
+
 export default function Home() {
   const fadeInAndRotate = useSpring({
     from: {
@@ -196,7 +202,7 @@ export default function Home() {
                 'flex items-center justify-center rounded-2xl bg-orange-500 px-6 py-4 text-base text-gray-900 transition-colors',
                 'xl:text-2xl',
               )}
-              href="https://www.google.com"
+              href={COURSE_LINK}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -354,25 +360,13 @@ export default function Home() {
                       className="hidden items-center gap-6 xl:flex"
                       style={props}
                     >
-                      <SocialDesktop
-                        icon={FaSpotify}
-                        href="https://www.google.com"
-                      />
+                      <SocialDesktop icon={FaSpotify} href={SPOTIFY_LINK} />
 
-                      <SocialDesktop
-                        icon={FaYoutube}
-                        href="https://www.google.com"
-                      />
+                      <SocialDesktop icon={FaYoutube} href={YOUTUBE_LINK} />
 
-                      <SocialDesktop
-                        icon={FaInstagram}
-                        href="https://www.google.com"
-                      />
+                      <SocialDesktop icon={FaInstagram} href={INSTAGRAM_LINK} />
 
-                      <SocialDesktop
-                        icon={FaTiktok}
-                        href="https://www.google.com"
-                      />
+                      <SocialDesktop icon={FaTiktok} href={TIKTOK_LINK} />
                     </animated.div>
                   )}
                 </ScrollTransition>
@@ -406,21 +400,21 @@ export default function Home() {
                   icon={FaSpotify}
                   title="Perfil no Spotify"
                   color="#00D75D"
-                  href="https://open.spotify.com/artist/5eX0epLy551uFsC45QUtnQ?si=wvQyNJLpTMWcbSqg8LCCFw"
+                  href={`${SPOTIFY_LINK}?si=wvQyNJLpTMWcbSqg8LCCFw`}
                 />
 
                 <Social
                   icon={FaYoutube}
                   title="Canal do Youtube"
                   color="#FF4747"
-                  href="https://www.youtube.com/c/StrangeMike"
+                  href={YOUTUBE_LINK}
                 />
 
                 <Social
                   icon={FaTiktok}
                   title="Perfil no TikTok"
                   color="#69C9D0"
-                  href="https://www.youtube.com/c/StrangeMike"
+                  href={TIKTOK_LINK}
                 />
               </animated.div>
             )}
